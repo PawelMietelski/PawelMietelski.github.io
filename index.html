@@ -149,37 +149,45 @@
         <h2>Realizacje</h2>
         <p>Kilka obiektów, które ostatnio przeszły przez nasze ręce.</p>
       </div>
-      <div class="gallery-grid">
-        <figure class="g-item g-tall">
-          <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: nowoczesna elewacja z rytmicznym układem balkonów">
-            <img src="media/nowoczesna-architektura-z-rytmem-balkonow-styl-miejski_169016-69191.avif" alt="Nowoczesna elewacja z rytmicznym układem balkonów" loading="lazy">
-          </button>
-          <figcaption>Nowoczesna zabudowa — rytmiczny układ balkonów na elewacji</figcaption>
-        </figure>
-        <figure class="g-item">
-          <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: balkon z zadaszeniem jednospadowym">
-            <img src="media/629469e7b3b11_o_medium.jpg" alt="Balkon z zadaszeniem jednospadowym" loading="lazy">
-          </button>
-          <figcaption>Zadaszenie balkonu, blacha na rąbek</figcaption>
-        </figure>
-        <figure class="g-item">
-          <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: balkony z tarasem drewnopodobnym">
-            <img src="media/IMG_7201-500x375.png" alt="Balkony z tarasem drewnopodobnym" loading="lazy">
-          </button>
-          <figcaption>Podłoga tarasowa, balustrady stalowe</figcaption>
-        </figure>
-        <figure class="g-item g-wide">
-          <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: budynek wielorodzinny z rzędami balkonów">
-            <img src="media/IMG_7327-500x375.jpeg" alt="Budynek wielorodzinny z rzędami balkonów" loading="lazy">
-          </button>
-          <figcaption>Wymiana balustrad — budynek wielorodzinny, etap całościowy</figcaption>
-        </figure>
-        <figure class="g-item">
-          <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: szklana balustrada bez profili z widokiem na jezioro">
-            <img src="media/balustrada-liniowa-szklo-matowe-883-vsgesg.jpg" alt="Szklana balustrada bezprofilowa na tarasie z widokiem na jezioro" loading="lazy">
-          </button>
-          <figcaption>Balustrada szklana bezprofilowa — czysta linia bez słupków</figcaption>
-        </figure>
+      <div class="carousel">
+        <button type="button" class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Poprzednie zdjęcie">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
+        </button>
+        <div class="carousel-track" id="carousel-track" tabindex="0" role="region" aria-label="Realizacje — przewiń, aby zobaczyć więcej zdjęć">
+          <figure class="g-item carousel-item">
+            <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: nowoczesna elewacja z rytmicznym układem balkonów">
+              <img src="media/nowoczesna-architektura-z-rytmem-balkonow-styl-miejski_169016-69191.avif" alt="Nowoczesna elewacja z rytmicznym układem balkonów" loading="lazy">
+            </button>
+            <figcaption>Nowoczesna zabudowa — rytmiczny układ balkonów na elewacji</figcaption>
+          </figure>
+          <figure class="g-item carousel-item">
+            <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: balkon z zadaszeniem jednospadowym">
+              <img src="media/629469e7b3b11_o_medium.jpg" alt="Balkon z zadaszeniem jednospadowym" loading="lazy">
+            </button>
+            <figcaption>Zadaszenie balkonu, blacha na rąbek</figcaption>
+          </figure>
+          <figure class="g-item carousel-item">
+            <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: balkony z tarasem drewnopodobnym">
+              <img src="media/IMG_7201-500x375.png" alt="Balkony z tarasem drewnopodobnym" loading="lazy">
+            </button>
+            <figcaption>Podłoga tarasowa, balustrady stalowe</figcaption>
+          </figure>
+          <figure class="g-item carousel-item">
+            <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: budynek wielorodzinny z rzędami balkonów">
+              <img src="media/IMG_7327-500x375.jpeg" alt="Budynek wielorodzinny z rzędami balkonów" loading="lazy">
+            </button>
+            <figcaption>Wymiana balustrad — budynek wielorodzinny, etap całościowy</figcaption>
+          </figure>
+          <figure class="g-item carousel-item">
+            <button type="button" class="g-trigger" aria-label="Powiększ zdjęcie: szklana balustrada bez profili z widokiem na jezioro">
+              <img src="media/balustrada-liniowa-szklo-matowe-883-vsgesg.jpg" alt="Szklana balustrada bezprofilowa na tarasie z widokiem na jezioro" loading="lazy">
+            </button>
+            <figcaption>Balustrada szklana bezprofilowa — czysta linia bez słupków</figcaption>
+          </figure>
+        </div>
+        <button type="button" class="carousel-nav carousel-next" id="carousel-next" aria-label="Następne zdjęcie">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
       </div>
     </div>
   </section>

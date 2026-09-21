@@ -105,6 +105,30 @@ if (lightbox) {
   });
 }
 
+// Realizacje carousel
+const carouselTrack = document.getElementById('carousel-track');
+const carouselPrev = document.getElementById('carousel-prev');
+const carouselNext = document.getElementById('carousel-next');
+
+if (carouselTrack && carouselPrev && carouselNext) {
+  const updateCarouselNav = () => {
+    const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+    carouselPrev.disabled = carouselTrack.scrollLeft <= 1;
+    carouselNext.disabled = carouselTrack.scrollLeft >= maxScroll - 1;
+  };
+
+  carouselPrev.addEventListener('click', () => {
+    carouselTrack.scrollBy({ left: -carouselTrack.clientWidth * 0.9, behavior: 'smooth' });
+  });
+  carouselNext.addEventListener('click', () => {
+    carouselTrack.scrollBy({ left: carouselTrack.clientWidth * 0.9, behavior: 'smooth' });
+  });
+
+  carouselTrack.addEventListener('scroll', updateCarouselNav, { passive: true });
+  window.addEventListener('resize', updateCarouselNav);
+  updateCarouselNav();
+}
+
 // Highlight the current section's nav link while scrolling
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav a');
