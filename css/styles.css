@@ -20,7 +20,7 @@
 
   --wrap: 1200px;
   --gutter: clamp(20px, 5vw, 56px);
-  --header-h: 76px;
+  --header-h: 92px;
 }
 
 * { box-sizing: border-box; }
@@ -125,10 +125,10 @@ p { margin: 0; }
   display: flex;
   align-items: center;
   gap: 32px;
-  height: 76px;
+  height: 92px;
 }
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand-logo { height: 44px; width: auto; }
+.brand-logo { height: 72px; width: auto; }
 
 .nav {
   display: flex;
@@ -304,19 +304,15 @@ p { margin: 0; }
 .service-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--steel-200);
-  border-left: 1px solid var(--steel-200);
+  gap: 48px 40px;
 }
 .service {
-  padding: 36px 32px;
-  border-right: 1px solid var(--steel-200);
-  border-bottom: 1px solid var(--steel-200);
-  border-top: 3px solid transparent;
-  transition: border-top-color 0.15s ease, background 0.15s ease;
+  padding-top: 22px;
+  border-top: 2px solid var(--steel-200);
+  transition: border-top-color 0.15s ease;
 }
 .service:hover {
   border-top-color: var(--amber);
-  background: var(--white);
 }
 .service-icon {
   width: 40px;
@@ -412,7 +408,7 @@ p { margin: 0; }
   border-radius: 50%;
   background: var(--white);
   color: var(--ink);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  border: 1px solid var(--steel-200);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -620,7 +616,6 @@ p { margin: 0; }
   background: var(--white);
   border: 1px solid var(--steel-200);
   padding: 36px;
-  box-shadow: 6px 6px 0 rgba(0,0,0,0.06);
 }
 .form-row {
   display: flex;
@@ -675,7 +670,6 @@ p { margin: 0; }
   width: auto;
   background: var(--white);
   padding: 6px 10px;
-  box-shadow: 3px 3px 0 rgba(239, 164, 58, 0.35);
 }
 .footer-nav {
   display: flex;
@@ -718,9 +712,9 @@ p { margin: 0; }
 }
 
 @media (max-width: 560px) {
-  :root { --header-h: 64px; }
-  .header-inner { height: 64px; }
-  .brand-logo { height: 36px; }
+  :root { --header-h: 72px; }
+  .header-inner { height: 72px; }
+  .brand-logo { height: 56px; }
   .phone { display: none; }
 
   .service-list { grid-template-columns: 1fr; }
