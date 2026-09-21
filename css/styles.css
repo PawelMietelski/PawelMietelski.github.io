@@ -177,8 +177,6 @@ p { margin: 0; }
   font-size: 1.15rem;
   letter-spacing: 0.01em;
 }
-.phone-large { font-size: 1.6rem; }
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -463,6 +461,38 @@ p { margin: 0; }
 }
 .lightbox-close:hover { background: rgba(255,255,255,0.22); }
 
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+.lightbox-nav svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.22); }
+.lightbox-nav[hidden] { display: none; }
+.lightbox-prev { left: clamp(8px, 3vw, 28px); }
+.lightbox-next { right: clamp(8px, 3vw, 28px); }
+
+@media (max-width: 640px) {
+  .lightbox-nav { width: 40px; height: 40px; }
+  .lightbox-nav svg { width: 18px; height: 18px; }
+}
+
 /* ==========================================================================
    Process
    ========================================================================== */
@@ -532,32 +562,6 @@ p { margin: 0; }
   color: var(--steel-500);
   font-size: 0.95rem;
 }
-
-/* ==========================================================================
-   CTA band
-   ========================================================================== */
-.cta-band {
-  background: var(--amber);
-  padding: 56px 0;
-}
-.cta-band-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-.cta-band h2 {
-  color: var(--amber-ink);
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-}
-.cta-band-actions {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-.cta-band .phone-large { color: var(--amber-ink); }
 
 /* ==========================================================================
    Contact
@@ -688,8 +692,6 @@ p { margin: 0; }
   .why-grid { grid-template-columns: 1fr; }
 
   .contact-grid { grid-template-columns: 1fr; }
-
-  .cta-band-inner { justify-content: flex-start; }
 }
 
 @media (max-width: 560px) {

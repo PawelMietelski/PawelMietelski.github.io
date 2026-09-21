@@ -39,13 +39,18 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCaption = document.getElementById('lightbox-caption');
 const lightboxClose = document.getElementById('lightbox-close');
+const lightboxPrev = document.getElementById('lightbox-prev');
+const lightboxNext = document.getElementById('lightbox-next');
+const galleryTriggers = Array.from(document.querySelectorAll('.g-trigger'));
 const pageLandmarks = [header, document.querySelector('main'), document.querySelector('.site-footer')].filter(Boolean);
 let lastFocused = null;
+let currentIndex = -1;
 
-function openLightbox(trigger) {
+function showSlide(index) {
+  currentIndex = (index + galleryTriggers.length) % galleryTriggers.length;
+  const trigger = galleryTriggers[currentIndex];
   const img = trigger.querySelector('img');
   const caption = trigger.closest('.g-item').querySelector('figcaption');
-  lastFocused = trigger;
 
   lightboxImg.src = img.src;
   lightboxImg.alt = img.alt;
@@ -55,6 +60,11 @@ function openLightbox(trigger) {
     const cap = Math.min(lightboxImg.naturalWidth, Math.round(window.innerWidth * 0.9));
     lightboxImg.style.maxWidth = cap + 'px';
   };
+}
+
+function openLightbox(trigger) {
+  lastFocused = trigger;
+  showSlide(galleryTriggers.indexOf(trigger));
 
   lightbox.classList.add('is-open');
   document.body.style.overflow = 'hidden';
@@ -71,18 +81,27 @@ function closeLightbox() {
 }
 
 if (lightbox) {
-  document.querySelectorAll('.g-trigger').forEach((trigger) => {
+  const hasMultiple = galleryTriggers.length > 1;
+  lightboxPrev.hidden = !hasMultiple;
+  lightboxNext.hidden = !hasMultiple;
+
+  galleryTriggers.forEach((trigger) => {
     trigger.addEventListener('click', () => openLightbox(trigger));
   });
 
   lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => showSlide(currentIndex - 1));
+  lightboxNext.addEventListener('click', () => showSlide(currentIndex + 1));
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (hasMultiple && e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+    if (hasMultiple && e.key === 'ArrowRight') showSlide(currentIndex + 1);
   });
 }
 
