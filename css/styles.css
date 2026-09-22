@@ -309,22 +309,34 @@ p { margin: 0; }
 .service {
   padding-top: 22px;
   border-top: 2px solid var(--steel-200);
-  transition: border-top-color 0.15s ease;
+  transition: border-top-color 0.2s ease, opacity 0.2s ease;
 }
 .service:hover {
   border-top-color: var(--amber);
+}
+.service-list:hover .service:not(:hover) {
+  opacity: 0.5;
 }
 .service-icon {
   width: 40px;
   height: 40px;
   color: var(--amber-deep);
   margin-bottom: 18px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.service:hover .service-icon {
+  color: var(--amber);
+  transform: translateY(-3px);
 }
 .service h3 {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 10px;
   color: var(--steel-900);
+  transition: color 0.2s ease;
+}
+.service:hover h3 {
+  color: var(--amber-deep);
 }
 .service p {
   color: var(--steel-500);
